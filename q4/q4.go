@@ -8,33 +8,24 @@ func ClassifyPrices(prices []int) (int, error) {
 	if len(prices) == 0 {
 		return 0, fmt.Errorf("erro")
 	}
-	crescente := make([]int, len(prices))
-	copy(crescente, prices)
-	for i := 0; i < len(prices)-1; i++ {
-		if crescente[i] > crescente[i+1] {
-			break
-
-		}
-		if i == len(prices)-2 {
-			return 1, nil
-		}
-	}
-
-	decrescente := make([]int, len(prices))
-	copy(decrescente, prices)
-	for i := len(prices) - 1; i > 0; i-- {
-		if decrescente[i] < decrescente[i-1] {
-			break
-		}
-		if i == len(prices)-2 {
-
-			return 2, nil
-		}
-	}
-	if crescente == nil && decrescente == nil {
+	if len (prices) == 1{
 		return 3, nil
 	}
-	if len(prices) == 1 {
+	var crescente bool = true
+	var decrescente bool = true
+	for i :=1; i < len(prices); i++{
+		if prices[i] < prices [i-1] {
+			crescente = false
+		} else if prices [i] > prices[i-1] {
+			decrescente = false
+		}
+		
+	}
+	if crescente == true {
+		return 1, nil
+	} else if decrescente == true {
+		return 2, nil
+	} else {
 		return 3, nil
 	}
 	return 0, nil
