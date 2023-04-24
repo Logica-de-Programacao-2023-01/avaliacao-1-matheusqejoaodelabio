@@ -1,3 +1,5 @@
+package q5
+
 func ProcessString(s string) string {
 	result := ""
 
