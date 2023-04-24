@@ -26,9 +26,14 @@ func ClassifyPrices(prices []int) (int, error) {
 		if decrescente[i] < decrescente[i-1] {
 			break
 		}
-		return 2, nil
+		if i == len(prices)-2 {
+
+			return 2, nil
+		}
 	}
-	
+	if crescente == nil && decrescente == nil {
+		return 3, nil
+	}
 	if len(prices) == 1 {
 		return 3, nil
 	}
