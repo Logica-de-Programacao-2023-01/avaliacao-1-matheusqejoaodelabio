@@ -1,5 +1,5 @@
 package q5
-
+import "strings"
 func ProcessString(s string) string {
 	result := ""
 
