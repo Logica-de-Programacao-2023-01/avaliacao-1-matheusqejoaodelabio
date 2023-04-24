@@ -1,6 +1,6 @@
 package q2
 
-func ProblemsSolved(answers [][2]bool) int {
+func ProblemsSolved(answers [][3]bool) int {
 	count := 0
 	for i := 0; i < len(answers); i++ {
 		soma := 0
