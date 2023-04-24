@@ -5,7 +5,7 @@ import (
 )
 
 func ClassifyPrices(prices []int) (int, error) {
-	if len(prices) == nil {
+	if len(prices) == 0 {
 		return 0, fmt.Errorf("erro")
 	}
 	crescente := make([]int, len(prices))
